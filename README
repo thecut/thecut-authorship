@@ -1,0 +1,14 @@
+The Cut Django App: Authorship
+
+=================
+thecut.authorship
+=================
+
+To install this application (whilst in the project's activated
+virtualenv)::
+    pip install git+ssh://git@git.thecut.net.au/thecut-authorship
+
+
+There is no need to add ``thecut.authorship`` to your project's
+``INSTALLED_APPS`` setting, as it provides only abstract models.
+
