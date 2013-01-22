@@ -5,11 +5,14 @@ from __future__ import absolute_import, unicode_literals
 class AuthorshipFormMixin(object):
     """Set the ``created_by`` and ``updated_by`` fields on a model.
 
-    This form requires that a property, ``self.user`` be set to an instance of
-    :py:class`~django.contrib.auth.models.User` before the ``save()`` method is
-    called.
+    Requires that a ``User`` instance be passed in to the constructor. Views
+    that inherit from ``AuthorshipViewMixin`` automatically pass this in.
 
     """
+
+    def __init__(self, user, *args, **kwargs):
+        self.user = user
+        super(AuthorshipFormMixin, self).__init__(*args, **kwargs)
 
     def save(self, *args, **kwargs):
         self.instance.updated_by = self.user
