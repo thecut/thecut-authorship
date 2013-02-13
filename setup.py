@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from version import get_git_version
 
-setup(name='core',
+setup(name='thecut-authorship',
     author='The Cut', author_email='development@thecut.net.au',
     url='http://projects.thecut.net.au/projects/thecut-authorship',
     namespace_packages=['thecut'],
