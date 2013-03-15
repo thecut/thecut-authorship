@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
+import warnings
 
 
-class AuthorshipFormMixin(object):
+class AuthorshipMixin(object):
     """Mixin for a :py:class:`~django.forms.ModelForm` which sets
     ``created_by`` and ``updated_by`` fields for the instance when saved.
 
@@ -20,11 +21,22 @@ class AuthorshipFormMixin(object):
 
         """
         self.user = user
-        super(AuthorshipFormMixin, self).__init__(*args, **kwargs)
+        super(AuthorshipMixin, self).__init__(*args, **kwargs)
 
     def save(self, *args, **kwargs):
         self.instance.updated_by = self.user
         if not self.instance.pk:
             self.instance.created_by = self.user
 
-        return super(AuthorshipFormMixin, self).save(*args, **kwargs)
+        return super(AuthorshipMixin, self).save(*args, **kwargs)
+
+
+class AuthorshipFormMixin(AuthorshipMixin):
+    """AuthorshipFormMixin is deprecated. Use AuthorshipMixin instead."""
+    # Renamed for consistency with ordering form mixin.
+
+    def __init__(self, *args, **kwargs):
+        warnings.warn('AuthorshipFormMixin is deprecated - use '
+                      'AuthorshipMixin instead.', DeprecationWarning,
+                      stacklevel=2)
+        return super(AuthorshipFormMixin, self).__init__(*args, **kwargs)
