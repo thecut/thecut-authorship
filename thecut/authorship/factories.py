@@ -1,7 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
-from faker import Factory as FakerFactory
-import factory
+
+try:
+    from faker import Factory as FakerFactory
+except ImportError, error:
+    message = '{0}. Try running `pip install fake-factory`.'.format(error)
+    raise ImportError(message)
+
+try:
+    import factory
+except ImportError, error:
+    message = '{0}. Try running `pip install factory_boy`.'.format(error)
+    raise ImportError(message)
 
 
 faker = FakerFactory.create()
