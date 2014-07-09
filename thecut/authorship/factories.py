@@ -1,7 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
-from faker import Factory as FakerFactory
-import factory
+
+try:
+    from faker import Factory as FakerFactory
+except ImportError as error:
+    message = '{0}. Try running `pip install fake-factory`.'.format(error)
+    raise ImportError(message)
+
+try:
+    import factory
+except ImportError as error:
+    message = '{0}. Try running `pip install factory_boy`.'.format(error)
+    raise ImportError(message)
 
 
 faker = FakerFactory.create()
@@ -9,7 +19,8 @@ faker = FakerFactory.create()
 
 class AuthorshipFactory(factory.django.DjangoModelFactory):
 
-    ABSTRACT_FACTORY = True
+    class Meta(object):
+        abstract = True
 
     created_by = factory.SubFactory('thecut.authorship.factories.UserFactory')
 
@@ -18,18 +29,18 @@ class AuthorshipFactory(factory.django.DjangoModelFactory):
 
 class UserFactory(factory.django.DjangoModelFactory):
 
-    FACTORY_FOR = 'auth.User'
-
-    FACTORY_DJANGO_GET_OR_CREATE = ['username']
+    class Meta(object):
+        model = 'auth.User'
+        django_get_or_create = ['username']
 
     username = factory.Sequence(lambda n: 'user-{0}'.format(n))
 
 
 class UserFakerFactory(UserFactory):
 
-    FACTORY_FOR = 'auth.User'
-
-    FACTORY_DJANGO_GET_OR_CREATE = ['username']
+    class Meta(object):
+        model = 'auth.User'
+        django_get_or_create = ['username']
 
     first_name = factory.LazyAttribute(lambda o: faker.first_name())
 
