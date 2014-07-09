@@ -30,9 +30,22 @@ class Authorship(models.Model):
 
     def save(self, user=None, **kwargs):
         if user is not None:
+            self.updated_by = user
+
             if not self.pk:
                 self.created_by = user
-            self.updated_by = user
+
+        # Ensure that 'updated_at' and 'updated_by' are always set on save.
+        if self.pk:
+            update_fields = kwargs.pop('update_fields', None)
+            if update_fields:
+                if 'updated_at' not in update_fields:
+                    update_fields.append('updated_at')
+                if 'updated_by' not in update_fields:
+                    update_fields.append('updated_by')
+
+                kwargs.update({'update_fields': update_fields})
+
         return super(Authorship, self).save(**kwargs)
 
 
