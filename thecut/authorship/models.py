@@ -7,9 +7,7 @@ import warnings
 
 class Authorship(models.Model):
     """Abstract model to track when an instance was created/updated and by
-    whom.
-
-    """
+    whom."""
 
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     """:py:class:`datetime` for when this object was first created."""
@@ -29,23 +27,27 @@ class Authorship(models.Model):
         abstract = True
 
     def save(self, user=None, **kwargs):
+        update_fields = kwargs.pop('update_fields', None)
+
+        if update_fields and 'updated_at' not in update_fields:
+            update_fields.append('updated_at')
+
+        if not self.pk:
+            if update_fields and 'created_at' not in update_fields:
+                update_fields.append('created_at')
+
         if user is not None:
+
             self.updated_by = user
+            if update_fields and 'updated_by' not in update_fields:
+                update_fields.append('updated_by')
 
             if not self.pk:
                 self.created_by = user
+                if update_fields and 'created_by' not in update_fields:
+                    update_fields.append('created_by')
 
-        # Ensure that 'updated_at' and 'updated_by' are always set on save.
-        if self.pk:
-            update_fields = kwargs.pop('update_fields', None)
-            if update_fields:
-                if 'updated_at' not in update_fields:
-                    update_fields.append('updated_at')
-                if 'updated_by' not in update_fields:
-                    update_fields.append('updated_by')
-
-                kwargs.update({'update_fields': update_fields})
-
+        kwargs.update({'update_fields': update_fields})
         return super(Authorship, self).save(**kwargs)
 
 
