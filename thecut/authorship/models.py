@@ -11,14 +11,16 @@ class Authorship(models.Model):
 
     """
 
-    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True, editable=False,
+                                      db_index=True)
     """:py:class:`datetime` for when this object was first created."""
 
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, editable=False,
                                    related_name='+')
     """User who first created this object (required)."""
 
-    updated_at = models.DateTimeField(auto_now=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True, editable=False,
+                                      db_index=True)
     """:py:class:`datetime` for when this object was last saved."""
 
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, editable=False,
