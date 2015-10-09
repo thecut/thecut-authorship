@@ -37,7 +37,7 @@ class TestAuthorshipMixin(TestCase):
 class DummyUnsavedModel(object):
 
     def __init__(self):
-        self.pk = None
+        self.created_at = None
 
 
 class TestAuthorshipMixinSave(TestCase):
@@ -81,7 +81,7 @@ class TestAuthorshipMixinSave(TestCase):
         class DummySavedModel(object):
 
             def __init__(self):
-                self.pk = 'arbitrary-value'
+                self.created_at = 'arbitrary-value'
                 self.created_by = 'arbitrary-value'
 
         user = DummyUser()

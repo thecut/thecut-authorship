@@ -25,7 +25,7 @@ class AuthorshipMixin(object):
 
     def save(self, *args, **kwargs):
         self.instance.updated_by = self.user
-        if not self.instance.pk:
+        if not self.instance.created_at:
             self.instance.created_by = self.user
 
         return super(AuthorshipMixin, self).save(*args, **kwargs)

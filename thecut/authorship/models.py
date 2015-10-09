@@ -32,7 +32,7 @@ class Authorship(models.Model):
         if update_fields and 'updated_at' not in update_fields:
             update_fields.append('updated_at')
 
-        if not self.pk:
+        if not self.created_at:
             if update_fields and 'created_at' not in update_fields:
                 update_fields.append('created_at')
 
@@ -42,7 +42,7 @@ class Authorship(models.Model):
             if update_fields and 'updated_by' not in update_fields:
                 update_fields.append('updated_by')
 
-            if not self.pk:
+            if not self.created_at:
                 self.created_by = user
                 if update_fields and 'created_by' not in update_fields:
                     update_fields.append('created_by')
