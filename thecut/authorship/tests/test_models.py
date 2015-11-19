@@ -4,7 +4,7 @@ from django.test import TestCase
 from django import VERSION as DJANGO_VERSION
 from test_app.factories import AuthorshipModelFactory as AuthorshipFactory
 from test_app.models import AuthorshipModel
-from django.utils.unittest import skipIf
+from unittest import skipIf
 from thecut.authorship.factories import UserFakerFactory
 
 
