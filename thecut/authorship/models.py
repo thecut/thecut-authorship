@@ -44,10 +44,13 @@ class Authorship(models.Model):
 
             if not self.created_at:
                 self.created_by = user
-                if update_fields is not None and 'created_by' not in update_fields:
+                if (update_fields is not None and
+                        'created_by' not in update_fields):
                     update_fields.append('created_by')
 
-        kwargs.update({'update_fields': update_fields})
+        if update_fields:
+            kwargs.update({'update_fields': update_fields})
+
         return super(Authorship, self).save(**kwargs)
 
 
