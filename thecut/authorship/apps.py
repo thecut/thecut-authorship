@@ -6,3 +6,4 @@ from django import apps
 class AppConfig(apps.AppConfig):
 
     name = 'thecut.authorship'
+    label = 'authorship'
