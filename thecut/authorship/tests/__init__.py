@@ -5,3 +5,4 @@ from django import VERSION as DJANGO_VERSION
 if DJANGO_VERSION < (1, 6):
     from .test_forms import *  # NOQA
     from .test_models import *  # NOQA
+    from .test_utils import *  # NOQA
