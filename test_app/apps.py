@@ -5,5 +5,5 @@ from django import apps
 
 class AppConfig(apps.AppConfig):
 
-    name = 'thecut.authorship'
-    label = 'authorship'
+    name = 'test_app'
+    label = 'test_app'
