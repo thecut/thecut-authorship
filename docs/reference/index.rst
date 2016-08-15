@@ -10,3 +10,4 @@ API Reference
    forms
    admin
    utils
+   settings
