@@ -1,10 +1,12 @@
-=======
+=============
 API Reference
-=======
+=============
 
-..
-  .. toctree::
-     :maxdepth: 2
+.. toctree::
+   :maxdepth: 2
 
-     foo
-     bar
+   models
+   views
+   forms
+   admin
+   utils

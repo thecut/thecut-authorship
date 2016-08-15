@@ -27,6 +27,8 @@ class Authorship(models.Model):
         abstract = True
 
     def save(self, user=None, **kwargs):
+        """A custom ``Model.save()`` method that appropriately populates
+        authorship fields."""
         update_fields = kwargs.pop('update_fields', None)
 
         if update_fields is not None and 'updated_at' not in update_fields:
