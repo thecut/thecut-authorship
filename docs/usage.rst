@@ -27,6 +27,8 @@ If the model creation / update doesn't directly relate to a user, use the site-w
     m = MyCoolModel()
     m.save(user=get_website_user())
 
+.. TIP::
+  If you specify ``update_fields`` in your call to :py:meth:`thecut.authorship.models.Authorship.save`, the list will automatically be updated to ensure that authorship information is saved.
 
 Integrating with ``django.contrib.admin``
 -----------------------------------------
