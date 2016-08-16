@@ -10,18 +10,15 @@ from thecut.authorship.factories import UserFakerFactory
 
 class TestAuthorshipModel(TestCase):
 
-    # This test has not been written properly and fails. Commenting out until
-    # we find a way to achieve its desired coverage.
-    #
-    # def test_sets_created_by_when_model_instance_is_first_saved(self):
-    #     """Check if ``created_by`` is correctly set on first save."""
-    #     authored = AuthorshipFactory.create()
-    #     user = UserFakerFactory()
-    #     user.save()
-    #
-    #     authored.save(user=user)
-    #
-    #     self.assertEqual(user, authored.created_by)
+    def test_sets_created_by_when_model_instance_is_first_saved(self):
+        """Check if ``created_by`` is correctly set on first save."""
+        authored = AuthorshipModel()
+        user = UserFakerFactory()
+        user.save()
+
+        authored.save(user=user)
+
+        self.assertEqual(user, authored.created_by)
 
     def test_sets_updated_by_when_model_instance_is_saved(self):
         """Ensure that
