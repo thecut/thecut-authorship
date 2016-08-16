@@ -2,16 +2,15 @@
 Welcome to thecut-authorship
 =============================
 
-..
-  .. image:: https://travis-ci.org/thecut/thecut-authorship.svg
-      :target: https://travis-ci.org/thecut/thecut-authorship
+.. image:: https://travis-ci.org/thecut/thecut-authorship.svg
+    :target: https://travis-ci.org/thecut/thecut-authorship
 
-  .. image:: https://codecov.io/github/thecut/thecut-authorship/coverage.svg
-      :target: https://codecov.io/github/thecut/thecut-authorship
+.. image:: https://codecov.io/github/thecut/thecut-authorship/coverage.svg
+    :target: https://codecov.io/github/thecut/thecut-authorship
 
-  .. image:: https://readthedocs.org/projects/thecut-authorship/badge/?version=latest
-      :target: http://thecut-authorship.readthedocs.io/en/latest/?badge=latest
-      :alt: Documentation Status
+.. image:: https://readthedocs.org/projects/thecut-authorship/badge/?version=latest
+    :target: http://thecut-authorship.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 A set of Django mixins to easily record authorship information for your models.
 
