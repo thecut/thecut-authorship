@@ -54,16 +54,3 @@ class Authorship(models.Model):
             kwargs.update({'update_fields': update_fields})
 
         return super(Authorship, self).save(**kwargs)
-
-
-class AbstractAuthorshipModel(Authorship):
-    """AbstractAuthorshipModel is deprecated. Use Authorship model instead."""
-    # Renamed for consistency with publishing models.
-
-    class Meta(Authorship.Meta):
-        abstract = True
-
-    def __init__(self, *args, **kwargs):
-        warnings.warn('AbstractAuthorshipModel is deprecated - use Authorship '
-                      'model instead.', DeprecationWarning, stacklevel=2)
-        return super(AbstractAuthorshipModel, self).__init__(*args, **kwargs)
