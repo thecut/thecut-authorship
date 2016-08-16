@@ -3,7 +3,7 @@ from __future__ import absolute_import, unicode_literals
 
 __title__ = 'thecut-authorship'
 
-__version__ = '0.11'
+__version__ = '1.0'
 
 __url__ = 'https://github.com/thecut/thecut-authorship'
 

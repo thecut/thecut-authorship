@@ -5,15 +5,24 @@ History
 =======
 
 
-0.11 (2016-08-16)
+1.0 (2016-08-16)
 ----------------
+
+* Removed deprecated APIs.
+* Removed compatibility code for unsupported versions of Django.
+* Improved test coverage.
+* Removed code paths in ``Authorship.save()`` that could not logically be reached.
+
+
+0.11 (2016-08-16)
+-----------------
 
 * Rewrote documentation.
 * Redesigned testing environment.
 
 
 0.10.1 (2015-11-19)
-----------------
+-------------------
 
 * Fixed bug when saving on Django 1.4
 * Started using ``unittest`` from Python standard library. Removes Python < 2.7 support.
@@ -22,7 +31,7 @@ History
 
 
 0.10 (2015-10-09)
-----------------
+-----------------
 
 * Test against Django 1.8
 * Fixed bug where models were incorrectly detected as 'not new' (for the purpose of setting ``created_at`` and ``created_by``) when a pk is manually specified.
@@ -35,7 +44,7 @@ History
 
 
 0.7.1 (2014-12-11)
-----------------
+------------------
 
 * Ensure that ``created_at`` and ``created_by`` are updated regardless of the contents of ``update_fields``.
 * Added Django admin mixin to save authorship information when using inlines.
@@ -65,7 +74,7 @@ History
 
 
 0.5.1 (2014-03-19)
-----------------
+------------------
 
 * Removed ``distribute`` from the install_requires list.
 
