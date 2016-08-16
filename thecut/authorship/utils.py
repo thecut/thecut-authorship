@@ -1,14 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
-from thecut.authorship import settings
-
-try:
-    from django.contrib.auth import get_user_model
-except ImportError:
-    # Pre-Django 1.5 compatibility
-    def get_user_model():
-        from django.contrib.auth.models import User
-        return User
+from . import settings
+from django.contrib.auth import get_user_model
 
 
 def get_website_user():

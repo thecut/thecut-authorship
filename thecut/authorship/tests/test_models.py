@@ -57,8 +57,6 @@ class TestAuthorshipModel(TestCase):
 
         self.assertGreater(authored.updated_at, original_updated_at)
 
-    @skipIf(DJANGO_VERSION < (1, 5),
-            'update_fields argument not supported in this version of Django.')
     def test_sets_updated_by_if_update_fields_is_specified(self):
         """Ensure that
         :py:class:`thecut.authorship.models.Authorship.updated_by` is
