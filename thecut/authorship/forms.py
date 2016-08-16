@@ -29,14 +29,3 @@ class AuthorshipMixin(object):
             self.instance.created_by = self.user
 
         return super(AuthorshipMixin, self).save(*args, **kwargs)
-
-
-class AuthorshipFormMixin(AuthorshipMixin):
-    """AuthorshipFormMixin is deprecated. Use AuthorshipMixin instead."""
-    # Renamed for consistency with ordering form mixin.
-
-    def __init__(self, *args, **kwargs):
-        warnings.warn('AuthorshipFormMixin is deprecated - use '
-                      'AuthorshipMixin instead.', DeprecationWarning,
-                      stacklevel=2)
-        return super(AuthorshipFormMixin, self).__init__(*args, **kwargs)
