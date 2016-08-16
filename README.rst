@@ -18,9 +18,9 @@ A set of Django mixins to easily record authorship information for your models.
 Features
 --------
 
-    * Base model allows easy recording of authorship information.
-    * Integration with Django's class-based views and forms.
-    * Integration with Django's admin.
+* Base model allows easy recording of authorship information.
+* Integration with Django's class-based views and forms.
+* Integration with Django's admin.
 
 
 Documentation
