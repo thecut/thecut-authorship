@@ -11,5 +11,6 @@ pip-selfcheck.json
 bin
 include
 lib
+local
 dist
 share

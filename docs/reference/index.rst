@@ -7,6 +7,7 @@ API Reference
 
    models
    views
+   api_views
    forms
    admin
    utils

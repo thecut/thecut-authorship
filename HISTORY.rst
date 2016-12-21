@@ -5,6 +5,12 @@ History
 =======
 
 
+1.0 (2016-12-21)
+----------------
+
+* Added support for Django REST Framework.
+
+
 1.0 (2016-08-16)
 ----------------
 
