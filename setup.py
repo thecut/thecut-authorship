@@ -33,7 +33,7 @@ setup(
     include_package_data=True,
 
     # Dependencies
-    install_requires=['Faker>=0.5.7'],
+    install_requires=[],
 
     # Author information
     author='The Cut Creative',
