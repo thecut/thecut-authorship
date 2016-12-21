@@ -64,3 +64,9 @@ Together, these mixins will—upon a successful form submission—appropriately 
 
 .. WARNING::
   You must use :py:class:`thecut.authorship.views.AuthorshipMixin` on the view *and* :py:class:`thecut.authorship.forms.AuthorshipMixin` on the form for this to work.
+
+
+Integrating with Django REST Framework
+--------------------------------------
+
+Use :py:class:`thecut.authorship.api.views.AuthorshipMixin` on your ``CreateModelMixin`` / ``UpdateModelMixin``-based API views.
