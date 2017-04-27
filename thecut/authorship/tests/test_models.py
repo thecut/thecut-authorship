@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 from django.test import TestCase
-from django import VERSION as DJANGO_VERSION
 from test_app.factories import AuthorshipModelFactory as AuthorshipFactory
 from test_app.models import AuthorshipModel
-from unittest import skipIf
 from thecut.authorship.factories import UserFakerFactory
 
 
