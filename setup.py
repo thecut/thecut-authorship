@@ -65,7 +65,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Framework :: Django',
         'Framework :: Django :: 1.8',
-        'Framework :: Django :: 1.9',
         'Framework :: Django :: 1.10',
+        'Framework :: Django :: 1.11',
     ],
 )

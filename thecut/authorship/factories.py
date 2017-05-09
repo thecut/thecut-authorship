@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
+from django.conf import settings
 
 try:
     from faker import Factory as FakerFactory
@@ -30,7 +31,7 @@ class AuthorshipFactory(factory.django.DjangoModelFactory):
 class UserFactory(factory.django.DjangoModelFactory):
 
     class Meta(object):
-        model = 'auth.User'
+        model = settings.AUTH_USER_MODEL
         django_get_or_create = ['username']
 
     username = factory.Sequence(lambda n: 'user-{0}'.format(n))
@@ -39,7 +40,7 @@ class UserFactory(factory.django.DjangoModelFactory):
 class UserFakerFactory(UserFactory):
 
     class Meta(object):
-        model = 'auth.User'
+        model = settings.AUTH_USER_MODEL
         django_get_or_create = ['username']
 
     first_name = factory.LazyAttribute(lambda o: faker.first_name())

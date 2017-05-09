@@ -5,7 +5,14 @@ History
 =======
 
 
-1.0 (2016-12-21)
+1.2 (2017-05-09)
+----------------
+
+* Added support for Django 1.11 and Python 3.6.
+* Drop support for Django 1.9.
+
+
+1.1 (2016-12-21)
 ----------------
 
 * Added support for Django REST Framework.
