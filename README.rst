@@ -1,6 +1,6 @@
-=============================
-Welcome to thecut-authorship
-=============================
+=================
+thecut-authorship
+=================
 
 .. image:: https://travis-ci.org/thecut/thecut-authorship.svg
     :target: https://travis-ci.org/thecut/thecut-authorship
@@ -25,7 +25,7 @@ Features
 Documentation
 -------------
 
-The full documentation is at https://thecut-authorship.readthedocs.org.
+The full documentation is at https://thecut-authorship.readthedocs.org/
 
 
 Quickstart

@@ -40,7 +40,7 @@ setup(
     author_email='development@thecut.net.au',
 
     # Additional information
-    url='https://projects.thecut.net.au/projects/thecut-authorship',
+    url='https://github.com/thecut/thecut-authorship',
     license='Apache Software License 2.0',
     description='A set of Django mixins to easily record authorship '
                 'information for your models.',
@@ -48,13 +48,7 @@ setup(
     platforms='any',
     classifiers=[
         'Programming Language :: Python',
-        # 'Development Status :: 1 - Planning',
-        # 'Development Status :: 2 - Pre-Alpha',
-        # 'Development Status :: 3 - Alpha',
-        'Development Status :: 4 - Beta',
-        # 'Development Status :: 5 - Production/Stable',
-        # 'Development Status :: 6 - Mature',
-        # 'Development Status :: 7 - Inactive',
+        'Development Status :: 5 - Production/Stable',
         'Natural Language :: English',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
