@@ -5,7 +5,7 @@ from django.conf import settings
 try:
     from faker import Factory as FakerFactory
 except ImportError as error:
-    message = '{0}. Try running `pip install fake-factory`.'.format(error)
+    message = '{0}. Try running `pip install faker`.'.format(error)
     raise ImportError(message)
 
 try:

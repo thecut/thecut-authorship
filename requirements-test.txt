@@ -1,5 +1,5 @@
 coverage
 factory-boy
-Faker
+faker
 mock
 tox
